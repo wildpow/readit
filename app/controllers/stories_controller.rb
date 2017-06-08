@@ -20,4 +20,8 @@ class StoriesController < ApplicationController
   def story_params
     params.require(:story).permit(:name, :link)
   end
+
+  def show
+    @story = Story.find(params[:id])
+  end
 end

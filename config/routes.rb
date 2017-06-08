@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :stories
+  resources :stories do
+    resources :votes
+  end
+  get 'votes/create'
   get 'stories/index'
   get 'stories/new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
